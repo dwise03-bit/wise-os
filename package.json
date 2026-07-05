@@ -1,17 +1,31 @@
 {
   "name": "wise-os",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node apps/api/server.js",
+    "doctor": "node packages/cli/index.js doctor",
+    "repair": "node packages/cli/index.js repair"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^15.0.0",
+    "dotenv": "^17.4.2",
+    "execa": "^9.6.1",
     "express": "^5.2.1",
-    "socket.io": "^4.8.3",
-    "systeminformation": "^5.31.13"
+    "systeminformation": "^5.31.13",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.0",
+    "eslint": "^10.6.0",
+    "prettier": "^3.9.4",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3"
   }
 }
